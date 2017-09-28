@@ -1,24 +1,41 @@
-# README
+## Ruby on Rails Microblogging App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Microblogger is a practice app built in Rails using the sample app from the [Ruby on Rails Tutorial](http://railstutorial.org/) by [Michael Hartl](http://www.michaelhartl.com/).
 
-Things you may want to cover:
+## Modifications
 
-* Ruby version
+There are several aspects that I modified or completely changed, including:
 
-* System dependencies
+* first change
 
-* Configuration
+## License
 
-* Database creation
+All source code in `Microblogger` is available jointly under the MIT License and the Scotchware License, as well as the original licenses provided by `Michael Hartl`.  See [LICENSE.md](LICENSE.md) for details.
 
-* Database initialization
+## Getting started
+To get started with the app, clone the repo and then install the needed gems:
+```
+$ bundle
+```
+Next, create & migrate the database:
 
-* How to run the test suite
+```
+$ rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rails db:migrate
+```
 
-* Deployment instructions
+Finally, run the test suite to verify that everything is working correctly:
 
-* ...
+```
+$ rake
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
+
+For more information, see the
+[*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
