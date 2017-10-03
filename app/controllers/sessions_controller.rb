@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # log the user in and redirect to the user's show page
       log_in user
-      remember user
+        # remember user - remove this line to prevent autoremember and use if/else below
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user) # persisted session w permanent cookies
       redirect_to user
     else
       # create an error message
