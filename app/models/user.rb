@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts
   attr_accessor :remember_token
   has_secure_password
   before_save { self.email = email.downcase }
