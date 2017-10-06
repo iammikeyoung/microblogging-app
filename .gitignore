@@ -1,6 +1,9 @@
 # dotenv
 .env
 
+# Ignore uploaded files in test/development
+/public/uploads
+
 # Ignore bundler config.
 /.bundle
 
