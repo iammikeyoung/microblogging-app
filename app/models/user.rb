@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
   # Password validation can allow nil value b/c has_secure_password includes a separate presence validation for nil.
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
@@ -52,7 +53,7 @@ class User < ApplicationRecord
   # Defines a proto-feed.
   # See "Following users" for the full implementation.
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
   end
 
   # Follows a user.
